@@ -1,4 +1,5 @@
 import argparse
+from port_scanner import PortScanner
 
 class Scanner:
     """
@@ -19,10 +20,23 @@ class Scanner:
         self.ip_address = ip_address
         print("Scanner init")
 
-    def run(self):
-        print("Run")
+    def parse_args(self):
+        pass
+    
+    
+    def run(self, args):
+        """
+        Execute all scans specified by user
+        """
+        self.scan_ports()
+
+
+    
+
 
     def scan_ports(self):
+        scanner = PortScanner(self.ip_address)
+        
         print("Scan ports")
 
 if __name__ == '__main__':
